@@ -18,7 +18,10 @@ def test_time():
     # 计算时间戳的含义。
     print(time_stamp / 3600 / 24 / 365 + 1970)
 
-    print(time.gmtime(0))
+    print(time.localtime(time_stamp))
+    print(time.asctime())
+    print(time.gmtime(time_stamp))
+    print(time.mktime(time.localtime()))
 
 
 def test_datetime():
@@ -42,7 +45,6 @@ def test_datetime():
 
     now_timezone = datetime.timezone
     print(now_timezone.max)
-
 
 
 if __name__ == '__main__':
