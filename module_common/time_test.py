@@ -18,6 +18,7 @@ def test_time():
     print(time_stamp)
     # 计算时间戳的含义。
     print(time_stamp / 3600 / 24 / 365 + 1970)
+
     # 将时间戳转为时间元祖,从1970年1月1日 0点0分计算
     print(time.gmtime(time_stamp))
     # 将时间戳转为时间元祖 ，本地时间，如果在中国就是从1970年1月1日 8点0分计算
@@ -67,27 +68,30 @@ def test_datetime():
 
     # 获取当前的日期和时间
     print("*" * 20)
-    test_datetime = datetime.datetime.today()
-    print(test_datetime)
-    print(test_datetime.time())
-    print(test_datetime.now())
-    print(test_datetime.ctime())
-    print(test_datetime.weekday())
-    print(test_datetime.day)
-
-    print("*" * 20)
-    test_datetime_now = datetime.datetime.now()
-    print(test_datetime_now)
-    print(test_datetime_now.ctime())
-    print(test_datetime_now.now())
-    print(test_datetime_now.weekday())
-    print(test_datetime_now.day)
+    test_dt = datetime.datetime.today()
+    print(test_dt)
+    print(test_dt.time())
+    print(test_dt.date())
+    print(test_dt.now())
+    print(test_dt.ctime())
+    print(test_dt.weekday())
+    print(test_dt.year)
+    print(test_dt.day)
+    # 从时间戳加载时间
+    test_dt_stamp = datetime.datetime.fromtimestamp(time.time() - 10000)
+    print(test_dt_stamp.now())
+    print(test_dt_stamp.year)
+    print(test_dt_stamp.month)
+    # 从格列高利历序号加载时间，其中公元 1 年 1 月 1 日的序号为 1
+    leap_num = calendar.leapdays(1, 2020)
+    test_dt_dinal = datetime.datetime.fromordinal(736942 + leap_num)
+    print(test_dt_dinal)
 
     # 时间的计算
     print("*" * 20)
     test_today = datetime.datetime.today()
     print("today:", test_today)
-    one_day = datetime.timedelta(days=3, hours=3)
+    one_day = datetime.timedelta(days=1, hours=1)
     yesterday = test_today - one_day
     tomorrow = test_today + one_day
     print("yesterday:", yesterday)
@@ -102,6 +106,11 @@ def test_datetime():
     t2 = datetime.time(13, 55, 0)
     if t1 < t2:
         print("t2 is later")
+
+    test_stmap1 = datetime.datetime.fromtimestamp(time.time() - 4000000)
+    test_stmap2 = datetime.datetime.fromtimestamp(time.time())
+    if test_stmap2 > test_stmap1:
+        print("test_stmap2 is bigger")
 
     d1 = datetime.datetime.today()
     d2 = d1 + datetime.timedelta(days=1)
@@ -146,5 +155,5 @@ def test_calendar():
 
 if __name__ == '__main__':
     # test_time()
-    test_calendar()
+    test_datetime()
     # test_calendar()
