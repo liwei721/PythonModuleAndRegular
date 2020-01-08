@@ -36,9 +36,12 @@ def test_time():
     # 将格式化的时间转成时间元祖
     print(time.strptime(local_time_str, "%Y-%m-%d %H:%M:%S"))
 
+    print(time.perf_counter())
     # 时间戳简单格式化
     print(time.ctime(time_stamp))
 
+    print(time.perf_counter())
+    print(time.process_time())
 
 def test_datetime():
     """
