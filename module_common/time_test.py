@@ -83,7 +83,7 @@ def test_datetime():
     print(test_dt_stamp.year)
     print(test_dt_stamp.month)
     # 从格列高利历序号加载时间，其中公元 1 年 1 月 1 日的序号为 1
-    leap_num = calendar.leapdays(1, 2020)
+    leap_num = calendar.leapdays(1,2020)
     test_dt_dinal = datetime.datetime.fromordinal(736942 + leap_num)
     print(test_dt_dinal)
 
@@ -91,7 +91,7 @@ def test_datetime():
     print("*" * 20)
     test_today = datetime.datetime.today()
     print("today:", test_today)
-    one_day = datetime.timedelta(days=1, hours=1)
+    one_day = datetime.timedelta(days=1, hours=1, minutes=30)
     yesterday = test_today - one_day
     tomorrow = test_today + one_day
     print("yesterday:", yesterday)
@@ -102,16 +102,6 @@ def test_datetime():
 
     # 时间的比较
     print("*" * 20)
-    t1 = datetime.time(12, 55, 0)
-    t2 = datetime.time(13, 55, 0)
-    if t1 < t2:
-        print("t2 is later")
-
-    test_stmap1 = datetime.datetime.fromtimestamp(time.time() - 4000000)
-    test_stmap2 = datetime.datetime.fromtimestamp(time.time())
-    if test_stmap2 > test_stmap1:
-        print("test_stmap2 is bigger")
-
     d1 = datetime.datetime.today()
     d2 = d1 + datetime.timedelta(days=1)
     if d1 < d2:
@@ -155,5 +145,5 @@ def test_calendar():
 
 if __name__ == '__main__':
     # test_time()
-    test_datetime()
-    # test_calendar()
+    # test_datetime()
+    test_calendar()
