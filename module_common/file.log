@@ -1,0 +1,10 @@
+2020-01-11 21:21:17,070 - __main__ - ERROR - console c
+2020-01-11 21:21:17,070 - __main__ - CRITICAL - console d
+2020-01-11 21:22:12,321 - __main__ - ERROR - console c
+2020-01-11 21:22:12,321 - __main__ - CRITICAL - console d
+2020-01-11 21:23:22,320 - __main__ - ERROR - console c
+2020-01-11 21:23:22,320 - __main__ - CRITICAL - console d
+2020-01-11 21:29:52,957 - logging_test - ERROR - logging test 2
+2020-01-11 21:30:46,527 - logging_test - ERROR - logging test 2
+2020-01-11 21:30:46,527 - logging_test - ERROR - password is xxxxx
+2020-01-11 21:33:15,457 - logging_test - ERROR - logging test 2
