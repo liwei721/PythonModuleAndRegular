@@ -4,6 +4,7 @@
     @function: 对python正则表达式的库re进行验证
 """
 import re
+import requests
 
 
 def find_and_match():
@@ -19,7 +20,7 @@ def find_and_match():
     print(match_result_2)
     # 使用groups/group(num)获取表达式
 
-    match_result_3 = re.match(r".*www\.(.*)\.com", target_str)
+    match_result_3 = re.match(r".*www\.(.*)\.com.*", target_str)
     print(match_result_3.groupdict())
     print(match_result_3.groups())
     print(match_result_3.group(1))
@@ -47,7 +48,7 @@ def find_and_match():
 
 
 def double(matched):
-    num = int(matched.group("number") * 2)
+    num = int(matched.group("number"))
     return str(num * 2)
 
 
@@ -76,7 +77,9 @@ def compile_test():
     target_str_1 = "12ab34eee"
     pattern = re.compile(r"\d+")
     result = pattern.findall(target_str_1)
+    result1 = re.findall(pattern, target_str_1)
     print(result)
+    print(result1)
 
 
 def split_test():
@@ -85,10 +88,9 @@ def split_test():
     :return:
     """
     target_str = "123a345b456c345d"
-    pattern = re.compile(r"[a-zA-z]+")
-    result = pattern.split(target_str)
+    result = re.split(r"[a-zA-z]+", target_str)
     print(result)
 
 
 if __name__ == '__main__':
-    split_test()
+    compile_test()
